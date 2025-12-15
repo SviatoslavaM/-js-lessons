@@ -1,4 +1,4 @@
-    // 1. Демо
+      // 1. Демо
         document.getElementById('demoBtn').addEventListener('click', function() {
             const name = prompt("Привіт! Як тебе звати?", "Друже");
             if (name) {
