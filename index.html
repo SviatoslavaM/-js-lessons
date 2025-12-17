@@ -8,520 +8,1050 @@
   </head>
   <body>
     <header>
-        <div class="container">
-            <h1>JS.Education</h1>
-            <p>Інтерактивний та зрозумілий курс з JavaScript</p>
-        </div>
+      <div class="container">
+        <h1>JS.Education</h1>
+        <p>Інтерактивний та зрозумілий курс з JavaScript</p>
+      </div>
     </header>
 
     <div class="main-container">
-        <!-- Навігація -->
-        <nav class="sidebar">
-            <h3>Зміст уроку</h3>
+      <!-- Навігація -->
+      <nav class="sidebar">
+        <h3>Зміст уроку</h3>
+        <ul>
+          <li><a href="#intro">1. Що таке JS?</a></li>
+          <li><a href="#syntax">2. Змінні (Коробки)</a></li>
+          <li><a href="#types">3. Типи даних</a></li>
+          <li><a href="#operators">4. Оператори (+ - *)</a></li>
+          <li><a href="#logic">5. Порівняння (True/False)</a></li>
+          <li><a href="#logical-ops">6. Логічні Оператори 🔥</a></li>
+          <li><a href="#conditions">7. Умови (if/else)</a></li>
+          <li><a href="#strings">8. Рядки та Текст</a></li>
+          <li><a href="#interaction">9. Магія DOM (Елементи) 🔥</a></li>
+          <li><a href="#interaction">10. Практика (Demo)</a></li>
+          <li><a href="#tasks">11. ЗАДАЧІ</a></li>
+          <li><a href="#quiz">🎯 ПЕРЕВІР СЕБЕ</a></li>
+        </ul>
+      </nav>
+
+      <main class="content">
+        <!-- 1. Вступ -->
+        <section id="intro">
+          <h2>1. Вступ: Навіщо нам JavaScript?</h2>
+          <p>JavaScript (JS) — це те, що "оживляє" сайт.</p>
+
+          <div class="analogy">
+            <h4>🏠 Аналогія: Будівництво будинку</h4>
+            <p>Уявіть веб-сайт як будинок:</p>
             <ul>
-                <li><a href="#intro">1. Що таке JS?</a></li>
-                <li><a href="#syntax">2. Змінні (Коробки)</a></li>
-                <li><a href="#types">3. Типи даних</a></li>
-                <li><a href="#operators">4. Оператори (+ - *)</a></li>
-                <li><a href="#logic">5. Порівняння (True/False)</a></li>
-                <li><a href="#logical-ops">6. Логічні Оператори 🔥</a></li>
-                <li><a href="#conditions">7. Умови (if/else)</a></li>
-                <li><a href="#strings">8. Рядки та Текст</a></li>
-                <li><a href="#interaction">9. Практика (Demo)</a></li>
-                <li><a href="#tasks">10. ЗАДАЧІ</a></li>
-                <li><a href="#quiz">🎯 ПЕРЕВІР СЕБЕ</a></li>
+              <li>
+                <strong>HTML</strong> — це стіни, фундамент, дах (Структура).
+              </li>
+              <li>
+                <strong>CSS</strong> — це шпалери, колір фарби, меблі (Краса).
+              </li>
+              <li>
+                <strong>JavaScript</strong> — це електрика, водопровід, розумний
+                дім (Функціонал: світло вмикається, вода тече).
+              </li>
             </ul>
-        </nav>
+          </div>
 
-        <main class="content">
-            
-            <!-- 1. Вступ -->
-            <section id="intro">
-                <h2>1. Вступ: Навіщо нам JavaScript?</h2>
-                <p>JavaScript (JS) — це те, що "оживляє" сайт. </p>
-                
-                <div class="analogy">
-                    <h4>🏠 Аналогія: Будівництво будинку</h4>
-                    <p>Уявіть веб-сайт як будинок:</p>
-                    <ul>
-                        <li><strong>HTML</strong> — це стіни, фундамент, дах (Структура).</li>
-                        <li><strong>CSS</strong> — це шпалери, колір фарби, меблі (Краса).</li>
-                        <li><strong>JavaScript</strong> — це електрика, водопровід, розумний дім (Функціонал: світло вмикається, вода тече).</li>
-                    </ul>
+          <p>
+            Без JS сайт — це просто картинка, на яку можна дивитися. З JS сайт
+            може реагувати на ваші кліки, рахувати числа та показувати анімації.
+          </p>
+        </section>
+
+        <!-- 2. Синтаксис -->
+        <section id="syntax">
+          <h2>2. Змінні: Де зберігати дані?</h2>
+
+          <div class="analogy">
+            <h4>📦 Аналогія: Коробки</h4>
+            <p>Уявіть, що <strong>Змінна</strong> — це коробка.</p>
+            <p>
+              1. Ви берете коробку і пишете на ній маркером назву (наприклад,
+              <code>userName</code>).<br />
+              2. Ви кладете всередину дані (наприклад, ім'я "Олег").<br />
+              3. Тепер, коли вам потрібне ім'я, ви просто шукаєте коробку з
+              написом <code>userName</code>.
+            </p>
+          </div>
+
+          <h3>Два типи коробок (Оголошення змінних)</h3>
+
+          <table>
+            <tr>
+              <th>Команда</th>
+              <th>Суть</th>
+              <th>Аналогія</th>
+            </tr>
+            <tr>
+              <td><code>let</code></td>
+              <td>Змінна, яку <strong>можна змінювати</strong>.</td>
+              <td>
+                Відкрита коробка. Поклали яблуко, потім забрали і поклали грушу.
+              </td>
+            </tr>
+            <tr>
+              <td><code>const</code></td>
+              <td>Константа, яку <strong>НЕ можна змінити</strong>.</td>
+              <td>Скляний сейф. Поклали раз — і воно там назавжди.</td>
+            </tr>
+          </table>
+
+          <h3>Як правильно називати змінні?</h3>
+          <p>
+            В JS використовується стиль
+            <strong>camelCase</strong> (верблюжийСтиль). Перше слово маленьке,
+            кожне наступне — з великої літери.
+          </p>
+
+          <div class="comparison-grid">
+            <div class="good-practice">
+              <h5>✅ Правильно</h5>
+              <code>userName</code><br />
+              <code>userAge</code><br />
+              <code>totalScore</code>
+            </div>
+            <div class="bad-practice">
+              <h5>❌ Неправильно</h5>
+              <code>Username</code> (з великої)<br />
+              <code>user_age</code> (через підкреслення)<br />
+              <code>a</code>, <code>b</code> (незрозуміло, що це)
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Типи даних -->
+        <section id="types">
+          <h2>3. Типи даних: Що лежить у коробці?</h2>
+          <p>
+            Комп'ютер повинен знати, що саме ви поклали в змінну: текст, число
+            чи щось інше.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Number (Число):</strong> Просто цифри. <br />
+              <code>let age = 15;</code> (Без лапок!)
+            </li>
+            <li>
+              <strong>String (Рядок/Текст):</strong> Будь-який текст у лапках.
+              <br />
+              <code>let name = "Аліна";</code> (В лапках!)
+            </li>
+            <li>
+              <strong>Boolean (Логічний тип):</strong> Тільки два значення:
+              правда чи брехня. <br />
+              <code>let isStudent = true;</code> (Так, студент) <br />
+              <code>let isOld = false;</code> (Ні, не старий)
+            </li>
+          </ul>
+
+          <div class="warning">
+            <strong>Увага:</strong> <code>15</code> — це число, з яким можна
+            робити математику (15+5=20). <br />
+            <code>"15"</code> — це просто текст, малюнок цифри (якщо додати
+            "15"+"5", вийде "155").
+          </div>
+        </section>
+
+        <!-- 4. Оператори -->
+        <section id="operators">
+          <h2>4. Оператори та Математика</h2>
+          <p>Тут все як у школі, але є нюанси.</p>
+
+          <div class="code-block">
+            <span class="code-keyword">const</span> x =
+            <span class="code-number">10</span>;
+            <span class="code-keyword">const</span> y =
+            <span class="code-number">3</span>; console.log(x + y);
+            <span class="code-comment">// 13 (Додавання)</span> console.log(x -
+            y);
+            <span class="code-comment">// 7 (Віднімання)</span> console.log(x *
+            y); <span class="code-comment">// 30 (Множення)</span> console.log(x
+            / y);
+            <span class="code-comment">// 3.333... (Ділення)</span>
+            console.log(x % y);
+            <span class="code-comment"
+              >// 1 (Остача: 3 вміщається у 10 три рази, лишається 1)</span
+            >
+          </div>
+
+          <h3>Пастка додавання тексту (+)</h3>
+          <p>
+            Якщо ви спробуєте додати <strong>Рядок</strong> до
+            <strong>Числа</strong>, JS перетворить все на текст і просто
+            "склеїть" це.
+          </p>
+          <div class="code-block">
+            <span class="code-comment">// Конкатенація (Склеювання)</span>
+            console.log(<span class="code-string">"5"</span> +
+            <span class="code-number">5</span>);
+            <span class="code-comment"
+              >// Результат: "55" (Текст), а не 10!</span
+            >
+          </div>
+        </section>
+
+        <!-- 5. Логіка -->
+        <section id="logic">
+          <h2>5. Порівняння (True/False)</h2>
+          <p>
+            Програмі часто треба відповідати на питання "Так" чи "Ні". Для цього
+            є оператори порівняння, які завжди повертають <code>true</code> або
+            <code>false</code>.
+          </p>
+
+          <div class="analogy">
+            <h4>⚖️ Аналогія: Терези</h4>
+            <p>
+              Ми ставимо на шальки терезів два значення і дивимось: переважує
+              одна, чи вони рівні.
+            </p>
+          </div>
+
+          <h3>1. Математичні порівняння</h3>
+          <table style="margin-bottom: 20px">
+            <tr>
+              <th>Знак</th>
+              <th>Значення</th>
+              <th>Приклад</th>
+              <th>Результат</th>
+            </tr>
+            <tr>
+              <td style="text-align: center; font-weight: bold">&gt;</td>
+              <td>Більше</td>
+              <td><code>10 &gt; 5</code></td>
+              <td>✅ true</td>
+            </tr>
+            <tr>
+              <td style="text-align: center; font-weight: bold">&lt;</td>
+              <td>Менше</td>
+              <td><code>5 &lt; 8</code></td>
+              <td>✅ true</td>
+            </tr>
+            <tr>
+              <td style="text-align: center; font-weight: bold">&gt;=</td>
+              <td>Більше або дорівнює</td>
+              <td><code>10 &gt;= 10</code></td>
+              <td>✅ true</td>
+            </tr>
+            <tr>
+              <td style="text-align: center; font-weight: bold">&lt;=</td>
+              <td>Менше або дорівнює</td>
+              <td><code>4 &lt;= 3</code></td>
+              <td>❌ false</td>
+            </tr>
+          </table>
+
+          <h3>2. Рівність та Нерівність (Важливо!)</h3>
+          <table>
+            <tr>
+              <th>Оператор</th>
+              <th>Назва</th>
+              <th>Приклад (5 проти "5")</th>
+            </tr>
+            <!-- Рівність -->
+            <tr style="background-color: #fff3e0">
+              <td><code>==</code></td>
+              <td>Слабка рівність (Ігнорує тип)</td>
+              <td>✅ <code>true</code> (Схожі)</td>
+            </tr>
+            <tr style="background-color: #e8f5e9">
+              <td><code>===</code></td>
+              <td><strong>Строга рівність</strong> (Перевіряє тип)</td>
+              <td>❌ <code>false</code> (Різні)</td>
+            </tr>
+            <!-- Нерівність -->
+            <tr style="background-color: #fff3e0">
+              <td><code>!=</code></td>
+              <td>Слабка нерівність</td>
+              <td>❌ <code>false</code></td>
+            </tr>
+            <tr style="background-color: #e8f5e9">
+              <td><code>!==</code></td>
+              <td><strong>Строга нерівність</strong></td>
+              <td>✅ <code>true</code></td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- 6. Логічні Оператори (NEW) -->
+        <section id="logical-ops">
+          <h2>6. Логічні Оператори (&&, ||, !)</h2>
+          <p>
+            Логічні оператори дозволяють перевіряти кілька умов одночасно. При
+            цьому відбувається "приведення типів" — перетворення значень на
+            <code>true</code> або <code>false</code>.
+          </p>
+
+          <div class="warning">
+            <strong>⚠️ Truthy і Falsy (Важливо запам'ятати)</strong><br />
+            Є лише 6 значень, які JS вважає "Брехнею" (Falsy). Все інше — це
+            "Правда" (Truthy).<br /><br />
+            ❌ <strong>Falsy (Брехня):</strong> <code>0</code>,
+            <code>NaN</code>, <code>null</code>, <code>undefined</code>,
+            <code>""</code> (порожній рядок), <code>false</code>.<br />
+            ✅ <strong>Truthy (Правда):</strong> Все інше (наприклад
+            <code>" "</code>, <code>1</code>, <code>-10</code>,
+            <code>"hello"</code>).
+          </div>
+
+          <h3>1. Логічне «І» (&&) — Амперсанд</h3>
+          <p>Шукає першу брехню. Якщо всі правдиві — повертає останнє.</p>
+
+          <!-- UPDATED ANALOGY -->
+          <div class="analogy" style="border-left-color: #ff9800">
+            <h4 style="color: #ff9800">🔐 Вхід в акаунт (Instagram/Game)</h4>
+            <p>
+              "Щоб увійти в профіль, ти маєш ввести правильний логін
+              <strong>І</strong> правильний пароль". <br />Якщо хоча б одне поле
+              неправильне (false) — вхід заборонено.
+            </p>
+          </div>
+
+          <div class="code-block">
+            <span class="code-keyword">const</span> age =
+            <span class="code-number">20</span>; console.log(age >
+            <span class="code-number">10</span> && age <
+            <span class="code-number">30</span>);
+            <span class="code-comment">// true && true -> true</span>
+
+            <span class="code-comment">// Зупиняється на першому false:</span>
+            console.log(<span class="code-number">1</span> &&
+            <span class="code-number">0</span> &&
+            <span class="code-number">5</span>);
+            <span class="code-comment">// поверне 0 (бо це falsy)</span>
+          </div>
+
+          <h3>2. Логічне «АБО» (||) — Пайп</h3>
+          <p>Шукає першу правду. Якщо все брехня — повертає останнє.</p>
+          <div class="analogy" style="border-left-color: #4caf50">
+            <h4 style="color: #4caf50">🎫 Вхідний квиток</h4>
+            <p>
+              "Ти пройдеш, якщо маєш квиток <strong>АБО</strong> запрошення
+              <strong>АБО</strong> ти організатор". <br />Достатньо хоча б
+              однієї правди (true).
+            </p>
+          </div>
+          <div class="code-block">
+            <span class="code-keyword">const</span> age =
+            <span class="code-number">5</span>; console.log(age <
+            <span class="code-number">10</span> || age >
+            <span class="code-number">30</span>);
+            <span class="code-comment">// true || false -> true</span>
+
+            <span class="code-comment">// Зупиняється на першому true:</span>
+            console.log(<span class="code-number">0</span> ||
+            <span class="code-string">"Привіт"</span> ||
+            <span class="code-keyword">false</span>);
+            <span class="code-comment">// поверне "Привіт"</span>
+          </div>
+
+          <h3>3. Логічне «НЕ» (!)</h3>
+          <p>Робить інверсію: перетворює правду на брехню і навпаки.</p>
+          <div class="code-block">
+            <span class="code-keyword">const</span> isOnline =
+            <span class="code-keyword">true</span>; console.log(!isOnline);
+            <span class="code-comment">// false (Не онлайн)</span>
+            console.log(!!<span class="code-string">"text"</span>);
+            <span class="code-comment"
+              >// true (швидкий спосіб перевірити на truthy)</span
+            >
+          </div>
+        </section>
+
+        <!-- 7. Умови -->
+        <section id="conditions">
+          <h2>7. Умовні розгалуження (if / else)</h2>
+          <p>
+            Це здатність програми приймати рішення. Без цього код виконувався б
+            просто зверху вниз, як пісня на пластинці.
+          </p>
+
+          <div class="analogy" style="border-left-color: #ff5722">
+            <h4 style="color: #ff5722">🚦 Аналогія: Світлофор</h4>
+            <p>
+              <strong>ЯКЩО (if)</strong> горить зелений -> йди.<br />
+              <strong>ІНАКШЕ (else)</strong> -> стій.
+            </p>
+          </div>
+
+          <div class="code-block">
+            <span class="code-keyword">const</span> color =
+            <span class="code-string">"green"</span>;
+
+            <span class="code-keyword">if</span> (color ===
+            <span class="code-string">"green"</span>) { alert(<span
+              class="code-string"
+              >"Можна йти!"</span
+            >); } <span class="code-keyword">else</span> { alert(<span
+              class="code-string"
+              >"Стій і чекай!"</span
+            >); }
+          </div>
+
+          <h3>Складна умова (else if)</h3>
+          <p>Якщо варіантів більше ніж два (наприклад, Жовтий колір).</p>
+          <div class="code-block">
+            <span class="code-keyword">if</span> (color ===
+            <span class="code-string">"green"</span>) { console.log(<span
+              class="code-string"
+              >"Йди"</span
+            >); } <span class="code-keyword">else if</span> (color ===
+            <span class="code-string">"yellow"</span>) { console.log(<span
+              class="code-string"
+              >"Приготуйся"</span
+            >); } <span class="code-keyword">else</span> { console.log(<span
+              class="code-string"
+              >"Стій"</span
+            >); }
+          </div>
+        </section>
+
+        <!-- 8. Рядки -->
+        <section id="strings">
+          <h2>8. Магія Тексту (Шаблонні рядки)</h2>
+          <p>
+            Найзручніший спосіб з'єднувати текст і змінні — використовувати
+            зворотні лапки <code>` `</code>.
+          </p>
+
+          <div class="code-block">
+            <span class="code-keyword">let</span> name =
+            <span class="code-string">"Макс"</span>;
+            <span class="code-keyword">let</span> age =
+            <span class="code-number">16</span>;
+
+            <span class="code-comment"
+              >// ✅ Сучасний спосіб (Інтерполяція)</span
+            >
+            <span class="code-keyword">let</span> text =
+            <span class="code-string"
+              >`Привіт, ${name}. Тобі ${age} років.`</span
+            >;
+          </div>
+        </section>
+        <!-- 9. DOM (NEW) -->
+        <section id="dom">
+          <h2>9. Робота з елементами (DOM)</h2>
+          <p>
+            До цього ми працювали з даними в пам'яті. Тепер навчимося керувати
+            самим сайтом: змінювати текст, кольори та класи.
+          </p>
+
+          <div class="analogy" style="border-left-color: #673ab7">
+            <h4 style="color: #673ab7">🕵️‍♂️ Пошук елементів</h4>
+            <p>Перш ніж щось змінити, треба це "знайти" на сторінці.</p>
+          </div>
+
+          <h3>1. Пошук: querySelector</h3>
+          <p>
+            Це сучасний стандарт. Ми використовуємо CSS-селектори (як
+            <code>.class</code>, <code>#id</code> або <code>h1</code>).
+          </p>
+
+          <div class="comparison-grid">
+            <div class="good-practice">
+              <h5>🎯 querySelector (Один)</h5>
+              <p>
+                Аналогія: <strong>"Снайперський приціл"</strong>. Знаходить
+                тільки ПЕРШИЙ елемент, який підходить.
+              </p>
+              <code>document.querySelector('.title')</code>
+            </div>
+            <div
+              class="good-practice"
+              style="border-color: #2196f3; background: #e3f2fd"
+            >
+              <h5 style="color: #1565c0">👨‍👩‍👧‍👦 querySelectorAll (Всі)</h5>
+              <p>
+                Аналогія: <strong>"Команда: Шикуйсь!"</strong>. Знаходить ВСІ
+                елементи і збирає їх у список (псевдомасив).
+              </p>
+              <code>document.querySelectorAll('.item')</code>
+            </div>
+          </div>
+
+          <h3>2. Зміна тексту: textContent</h3>
+          <p>Дозволяє читати або змінювати текст всередині тегу.</p>
+          <div class="analogy">
+            <h4>🏷 Аналогія: Цінник в магазині</h4>
+            <p>Ви можете стерти стару ціну і написати нову.</p>
+          </div>
+          <div class="code-block">
+            <span class="code-keyword">const</span> title =
+            document.querySelector(<span class="code-string">"h1"</span>);
+            title.textContent =
+            <span class="code-string">"Новий Заголовок!"</span>;
+          </div>
+
+          <button class="btn btn-small btn-outline" onclick="changeTitleDemo()">
+            ▶ Натисни мене (змінити H1)
+          </button>
+
+          <h3>3. Класи: classList (Скіни)</h3>
+          <p>
+            Найкращий спосіб змінювати вигляд елемента — додавати або прибирати
+            класи.
+          </p>
+
+          <div class="analogy" style="border-left-color: #e91e63">
+            <h4 style="color: #e91e63">👕 Аналогія: Одяг або Скіни в грі</h4>
+            <p>Елемент — це персонаж. Клас — це скін (вигляд).</p>
+            <ul>
+              <li><code>add('active')</code> — Вдягнути скін.</li>
+              <li><code>remove('active')</code> — Зняти скін.</li>
+              <li>
+                <code>toggle('active')</code> — Перемикач (якщо є — зняти, якщо
+                нема — вдягнути).
+              </li>
+              <li>
+                <code>contains('active')</code> — Перевірити, чи вдягнутий скін.
+              </li>
+            </ul>
+          </div>
+
+          <div class="demo-box" id="skinBox">Я - коробка з демо-скіном</div>
+          <button class="btn btn-small" onclick="toggleSkin()">
+            Toggle Skin (Перемкнути вигляд)
+          </button>
+
+          <h3>4. Стилі: style</h3>
+          <p>
+            Можна змінювати стилі напряму. Але пам'ятайте про
+            <strong>camelCase</strong>: у CSS це <code>background-color</code>,
+            а в JS — <code>backgroundColor</code>.
+          </p>
+          <div class="code-block">
+            element.style.backgroundColor =
+            <span class="code-string">"teal"</span>; element.style.fontSize =
+            <span class="code-string">"24px"</span>;
+          </div>
+        </section>
+        <!-- 10. Взаємодія -->
+        <section id="interaction">
+          <h2>10. Взаємодія: Як спілкуватися з JS?</h2>
+          <p>
+            Браузер надає нам 4 основні інструменти для введення та виведення
+            інформації.
+          </p>
+
+          <!-- Console.log -->
+          <div class="analogy" style="border-left-color: #607d8b">
+            <h4 style="color: #607d8b">
+              🛠 1. console.log() — "Щоденник Розробника"
+            </h4>
+            <p>Бачить тільки програміст у консолі (F12).</p>
+          </div>
+          <div class="code-block">
+            console.log(<span class="code-string">"Secret info"</span>);
+          </div>
+
+          <!-- Alert -->
+          <div class="analogy" style="border-left-color: #ff9800">
+            <h4 style="color: #ff9800">📢 2. alert() — "Гучномовець"</h4>
+            <p>Виводить модальне вікно. Зупиняє скрипт.</p>
+          </div>
+
+          <!-- Prompt -->
+          <div class="analogy" style="border-left-color: #2196f3">
+            <h4 style="color: #2196f3">📝 3. prompt() — "Анкета"</h4>
+            <p>Поле для введення тексту. Завжди повертає рядок!</p>
+          </div>
+
+          <!-- Confirm -->
+          <div class="analogy" style="border-left-color: #9c27b0">
+            <h4 style="color: #9c27b0">⚖ 4. confirm() — "Так чи Ні"</h4>
+            <p>
+              Повертає <code>true</code> (ОК) або
+              <code>false</code> (Скасувати).
+            </p>
+          </div>
+
+          <button id="demoBtn" class="btn">Запустити Демо-Діалог</button>
+        </section>
+
+        <!-- 11. ЗАДАЧІ (Оновлено) -->
+        <section id="tasks">
+          <h2>11. Задачі для самостійного вирішення</h2>
+          <p>
+            Ми додали нові завдання, щоб ви могли потренуватися працювати з
+            елементами сторінки!
+          </p>
+
+          <!-- Задача 1 (Стара) -->
+          <div class="task-card">
+            <div class="task-header">
+              <h3>Задача №1: "Калькулятор Зарплати"</h3>
+              <span class="task-badge">JS Logic</span>
+            </div>
+            <p>
+              <strong>Умова:</strong> Створіть змінні <code>salary</code> =
+              15000 та <code>months</code> = 12. Обчисліть річний дохід і
+              виведіть його через alert.
+            </p>
+            <div style="margin-top: 15px">
+              <button class="btn btn-small btn-outline" onclick="runTask1()">
+                ▶ Запустити
+              </button>
+              <button class="solution-toggle" onclick="toggleSolution('sol1')">
+                Показати рішення
+              </button>
+            </div>
+            <div id="sol1" class="solution-block">
+              <div class="code-block">
+                <span class="code-keyword">const</span> salary =
+                <span class="code-number">15000</span>;
+                <span class="code-keyword">const</span> months =
+                <span class="code-number">12</span>; alert(<span
+                  class="code-string"
+                  >`Річний дохід: ${salary * months}`</span
+                >);
+              </div>
+            </div>
+          </div>
+
+          <!-- Задача 2 (Стара) -->
+          <div class="task-card">
+            <div class="task-header">
+              <h3>Задача №2: "Конвертер Часу"</h3>
+              <span class="task-badge">JS Logic</span>
+            </div>
+            <p>
+              <strong>Умова:</strong> Переведіть 24 години у хвилини та секунди.
+            </p>
+            <div style="margin-top: 15px">
+              <button class="btn btn-small btn-outline" onclick="runTask2()">
+                ▶ Запустити
+              </button>
+              <button class="solution-toggle" onclick="toggleSolution('sol2')">
+                Показати рішення
+              </button>
+            </div>
+            <div id="sol2" class="solution-block">
+              <div class="code-block">
+                <span class="code-keyword">const</span> hours =
+                <span class="code-number">24</span>; console.log(<span
+                  class="code-string"
+                  >`Хвилин: ${hours * 60}`</span
+                >); console.log(<span class="code-string"
+                  >`Секунд: ${hours * 60 * 60}`</span
+                >);
+              </div>
+            </div>
+          </div>
+
+          <!-- Задача 3 (Стара) -->
+          <div class="task-card">
+            <div class="task-header">
+              <h3>Задача №3: "Фейс-контроль"</h3>
+              <span class="task-badge">JS Logic</span>
+            </div>
+            <p>
+              <strong>Умова:</strong> Запитайте вік через <code>prompt</code>.
+              Якщо >= 18 — "Welcome", інакше — "Go home".
+            </p>
+            <div style="margin-top: 15px">
+              <button class="btn btn-small btn-outline" onclick="runTask3()">
+                ▶ Запустити
+              </button>
+              <button class="solution-toggle" onclick="toggleSolution('sol3')">
+                Показати рішення
+              </button>
+            </div>
+            <div id="sol3" class="solution-block">
+              <div class="code-block">
+                <span class="code-keyword">const</span> age = prompt(<span
+                  class="code-string"
+                  >"Ваш вік?"</span
+                >); <span class="code-keyword">if</span> (Number(age) >=
+                <span class="code-number">18</span>) { alert(<span
+                  class="code-string"
+                  >"Welcome!"</span
+                >); } <span class="code-keyword">else</span> { alert(<span
+                  class="code-string"
+                  >"Go home!"</span
+                >); }
+              </div>
+            </div>
+          </div>
+
+          <!-- NEW TASKS SECTION HEADING -->
+          <h3
+            style="
+              margin-top: 40px;
+              border-left: 5px solid #e91e63;
+              padding-left: 10px;
+              color: #e91e63;
+            "
+          >
+            🔥 Задачі по темі DOM (Нове)
+          </h3>
+
+          <!-- Задача 4 (DOM) -->
+          <div class="task-card">
+            <div class="task-header">
+              <h3>Задача №4: "Хакери" (Зміна заголовка)</h3>
+              <span class="task-badge" style="background: #e91e63">DOM</span>
+            </div>
+            <p>
+              <strong>Умова:</strong> Знайдіть головний заголовок
+              <code>h1</code> на сторінці та змініть його текст на "HACKED BY
+              JS!", а колір на зелений.
+            </p>
+            <div style="margin-top: 15px">
+              <button class="btn btn-small btn-outline" onclick="runTask4()">
+                ▶ Запустити код
+              </button>
+              <button class="solution-toggle" onclick="toggleSolution('sol4')">
+                Показати рішення
+              </button>
+            </div>
+            <div id="sol4" class="solution-block">
+              <div class="code-block">
+                <span class="code-keyword">const</span> heading =
+                document.querySelector(<span class="code-string">'h1'</span>);
+                heading.textContent =
+                <span class="code-string">"HACKED BY JS!"</span>;
+                heading.style.color = <span class="code-string">"green"</span>;
+              </div>
+            </div>
+          </div>
+
+          <!-- Задача 5 (DOM) -->
+          <div class="task-card">
+            <div class="task-header">
+              <h3>Задача №5: "Нічний Режим"</h3>
+              <span class="task-badge" style="background: #e91e63">DOM</span>
+            </div>
+            <p>
+              <strong>Умова:</strong> Напишіть код, який знаходить елемент з ID
+              <code>test-box</code> і додає йому клас
+              <code>night-mode</code> (через toggle).
+            </p>
+
+            <!-- Тестовий елемент для задачі -->
+            <div id="test-box" class="test-box">
+              Я - Тестовий Блок (Зміни мене!)
+            </div>
+
+            <div style="margin-top: 15px">
+              <button class="btn btn-small btn-outline" onclick="runTask5()">
+                ▶ Запустити код
+              </button>
+              <button class="solution-toggle" onclick="toggleSolution('sol5')">
+                Показати рішення
+              </button>
+            </div>
+            <div id="sol5" class="solution-block">
+              <div class="code-block">
+                <span class="code-keyword">const</span> box =
+                document.querySelector(<span class="code-string"
+                  >'#test-box'</span
+                >); box.classList.toggle(<span class="code-string"
+                  >'night-mode'</span
+                >);
+              </div>
+            </div>
+          </div>
+
+          <!-- Задача 6 (DOM + Prompt) -->
+          <div class="task-card">
+            <div class="task-header">
+              <h3>Задача №6: "Привітання на сторінці"</h3>
+              <span class="task-badge" style="background: #e91e63">DOM</span>
+            </div>
+            <p>
+              <strong>Умова:</strong> Запитайте ім'я користувача (prompt).
+              Знайдіть елемент з ID <code>user-name-span</code> і запишіть туди
+              це ім'я.
+            </p>
+
+            <p>
+              Привіт,
+              <span
+                id="user-name-span"
+                style="font-weight: bold; color: var(--accent-blue)"
+                >[Гість]</span
+              >!
+            </p>
+
+            <div style="margin-top: 15px">
+              <button class="btn btn-small btn-outline" onclick="runTask6()">
+                ▶ Запустити код
+              </button>
+              <button class="solution-toggle" onclick="toggleSolution('sol6')">
+                Показати рішення
+              </button>
+            </div>
+            <div id="sol6" class="solution-block">
+              <div class="code-block">
+                <span class="code-keyword">const</span> name = prompt(<span
+                  class="code-string"
+                  >"Як вас звати?"</span
+                >); <span class="code-keyword">const</span> span =
+                document.querySelector(<span class="code-string"
+                  >'#user-name-span'</span
+                >); <span class="code-keyword">if</span>(name) {
+                span.textContent = name; }
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. ТЕСТ -->
+        <section id="quiz">
+          <h2>🎯 Розширений Тест (7 питань)</h2>
+          <p>Перевірте, як ви засвоїли матеріал.</p>
+
+          <div class="quiz-container">
+            <form id="quizForm">
+              <!-- Питання 1 -->
+              <div class="question-block" id="q1-block">
+                <span class="question-text">1. Що робить `const`?</span>
+                <div class="options">
+                  <label
+                    ><input type="radio" name="q1" value="a" /> Створює змінну,
+                    яку можна змінювати.</label
+                  >
+                  <label
+                    ><input type="radio" name="q1" value="b" /> Створює незмінну
+                    константу.</label
+                  >
                 </div>
-
-                <p>Без JS сайт — це просто картинка, на яку можна дивитися. З JS сайт може реагувати на ваші кліки, рахувати числа та показувати анімації.</p>
-            </section>
-
-            <!-- 2. Синтаксис -->
-            <section id="syntax">
-                <h2>2. Змінні: Де зберігати дані?</h2>
-                
-                <div class="analogy">
-                    <h4>📦 Аналогія: Коробки</h4>
-                    <p>Уявіть, що <strong>Змінна</strong> — це коробка. </p>
-                    <p>1. Ви берете коробку і пишете на ній маркером назву (наприклад, <code>userName</code>).<br>
-                    2. Ви кладете всередину дані (наприклад, ім'я "Олег").<br>
-                    3. Тепер, коли вам потрібне ім'я, ви просто шукаєте коробку з написом <code>userName</code>.</p>
+              </div>
+              <!-- Питання 2 -->
+              <div class="question-block" id="q2-block">
+                <span class="question-text">2. `10` + `"5"` = ?</span>
+                <div class="options">
+                  <label><input type="radio" name="q2" value="a" /> 15</label>
+                  <label
+                    ><input type="radio" name="q2" value="b" /> "105"</label
+                  >
                 </div>
-
-                <h3>Два типи коробок (Оголошення змінних)</h3>
-                
-                <table>
-                    <tr>
-                        <th>Команда</th>
-                        <th>Суть</th>
-                        <th>Аналогія</th>
-                    </tr>
-                    <tr>
-                        <td><code>let</code></td>
-                        <td>Змінна, яку <strong>можна змінювати</strong>.</td>
-                        <td>Відкрита коробка. Поклали яблуко, потім забрали і поклали грушу.</td>
-                    </tr>
-                    <tr>
-                        <td><code>const</code></td>
-                        <td>Константа, яку <strong>НЕ можна змінити</strong>.</td>
-                        <td>Скляний сейф. Поклали раз — і воно там назавжди.</td>
-                    </tr>
-                </table>
-
-                <h3>Як правильно називати змінні?</h3>
-                <p>В JS використовується стиль <strong>camelCase</strong> (верблюжийСтиль). Перше слово маленьке, кожне наступне — з великої літери.</p>
-
-                <div class="comparison-grid">
-                    <div class="good-practice">
-                        <h5>✅ Правильно</h5>
-                        <code>userName</code><br>
-                        <code>userAge</code><br>
-                        <code>totalScore</code>
-                    </div>
-                    <div class="bad-practice">
-                        <h5>❌ Неправильно</h5>
-                        <code>Username</code> (з великої)<br>
-                        <code>user_age</code> (через підкреслення)<br>
-                        <code>a</code>, <code>b</code> (незрозуміло, що це)
-                    </div>
+              </div>
+              <!-- Питання 3 -->
+              <div class="question-block" id="q3-block">
+                <span class="question-text"
+                  >3. Який оператор найбезпечніший для порівняння?</span
+                >
+                <div class="options">
+                  <label><input type="radio" name="q3" value="a" /> ==</label>
+                  <label><input type="radio" name="q3" value="b" /> ===</label>
                 </div>
-            </section>
-
-            <!-- 3. Типи даних -->
-            <section id="types">
-                <h2>3. Типи даних: Що лежить у коробці?</h2>
-                <p>Комп'ютер повинен знати, що саме ви поклали в змінну: текст, число чи щось інше.</p>
-
-                <ul>
-                    <li>
-                        <strong>Number (Число):</strong> Просто цифри. <br>
-                        <code>let age = 15;</code> (Без лапок!)
-                    </li>
-                    <li>
-                        <strong>String (Рядок/Текст):</strong> Будь-який текст у лапках. <br>
-                        <code>let name = "Аліна";</code> (В лапках!)
-                    </li>
-                    <li>
-                        <strong>Boolean (Логічний тип):</strong> Тільки два значення: правда чи брехня. <br>
-                        <code>let isStudent = true;</code> (Так, студент) <br>
-                        <code>let isOld = false;</code> (Ні, не старий)
-                    </li>
-                </ul>
-
-                <div class="warning">
-                    <strong>Увага:</strong> <code>15</code> — це число, з яким можна робити математику (15+5=20). <br>
-                    <code>"15"</code> — це просто текст, малюнок цифри (якщо додати "15"+"5", вийде "155").
+              </div>
+              <!-- Питання 4 -->
+              <div class="question-block" id="q4-block">
+                <span class="question-text"
+                  >4. Яка назва змінної правильна (best practice)?</span
+                >
+                <div class="options">
+                  <label
+                    ><input type="radio" name="q4" value="a" /> userName</label
+                  >
+                  <label
+                    ><input type="radio" name="q4" value="b" /> user_name</label
+                  >
+                  <label
+                    ><input type="radio" name="q4" value="c" /> Username</label
+                  >
                 </div>
-            </section>
-
-            <!-- 4. Оператори -->
-            <section id="operators">
-                <h2>4. Оператори та Математика</h2>
-                <p>Тут все як у школі, але є нюанси.</p>
-                
-                <div class="code-block">
-<span class="code-keyword">const</span> x = <span class="code-number">10</span>;
-<span class="code-keyword">const</span> y = <span class="code-number">3</span>;
-
-console.log(x + y); <span class="code-comment">// 13 (Додавання)</span>
-console.log(x - y); <span class="code-comment">// 7 (Віднімання)</span>
-console.log(x * y); <span class="code-comment">// 30 (Множення)</span>
-console.log(x / y); <span class="code-comment">// 3.333... (Ділення)</span>
-console.log(x % y); <span class="code-comment">// 1 (Остача: 3 вміщається у 10 три рази, лишається 1)</span>
+              </div>
+              <!-- Питання 5 -->
+              <div class="question-block" id="q5-block">
+                <span class="question-text"
+                  >5. Який тип даних завжди повертає `prompt()`?</span
+                >
+                <div class="options">
+                  <label
+                    ><input type="radio" name="q5" value="a" /> Number
+                    (Число)</label
+                  >
+                  <label
+                    ><input type="radio" name="q5" value="b" /> String
+                    (Рядок)</label
+                  >
                 </div>
-
-                <h3>Пастка додавання тексту (+)</h3>
-                <p>Якщо ви спробуєте додати <strong>Рядок</strong> до <strong>Числа</strong>, JS перетворить все на текст і просто "склеїть" це.</p>
-                <div class="code-block">
-<span class="code-comment">// Конкатенація (Склеювання)</span>
-console.log(<span class="code-string">"5"</span> + <span class="code-number">5</span>); 
-<span class="code-comment">// Результат: "55" (Текст), а не 10!</span>
+              </div>
+              <!-- Питання 6 -->
+              <div class="question-block" id="q6-block">
+                <span class="question-text"
+                  >6. Що буде, якщо умова в `if` є `false`?</span
+                >
+                <div class="options">
+                  <label
+                    ><input type="radio" name="q6" value="a" /> Виконається блок
+                    `else`</label
+                  >
+                  <label
+                    ><input type="radio" name="q6" value="b" /> Програма
+                    зламається</label
+                  >
                 </div>
-            </section>
-
-            <!-- 5. Логіка -->
-            <section id="logic">
-                <h2>5. Порівняння (True/False)</h2>
-                <p>Програмі часто треба відповідати на питання "Так" чи "Ні". Для цього є оператори порівняння, які завжди повертають <code>true</code> або <code>false</code>.</p>
-
-                <div class="analogy">
-                    <h4>⚖️ Аналогія: Терези</h4>
-                    <p>Ми ставимо на шальки терезів два значення і дивимось: переважує одна, чи вони рівні.</p>
+              </div>
+              <!-- Питання 7 -->
+              <div class="question-block" id="q7-block">
+                <span class="question-text">7. Чому дорівнює `15 % 2`?</span>
+                <div class="options">
+                  <label><input type="radio" name="q7" value="a" /> 7.5</label>
+                  <label
+                    ><input type="radio" name="q7" value="b" /> 1 (остача від
+                    ділення)</label
+                  >
                 </div>
+              </div>
 
-                <h3>1. Математичні порівняння</h3>
-                <table style="margin-bottom: 20px;">
-                    <tr>
-                        <th>Знак</th>
-                        <th>Значення</th>
-                        <th>Приклад</th>
-                        <th>Результат</th>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; font-weight: bold;">&gt;</td>
-                        <td>Більше</td>
-                        <td><code>10 &gt; 5</code></td>
-                        <td>✅ true</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; font-weight: bold;">&lt;</td>
-                        <td>Менше</td>
-                        <td><code>5 &lt; 8</code></td>
-                        <td>✅ true</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; font-weight: bold;">&gt;=</td>
-                        <td>Більше або дорівнює</td>
-                        <td><code>10 &gt;= 10</code></td>
-                        <td>✅ true</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; font-weight: bold;">&lt;=</td>
-                        <td>Менше або дорівнює</td>
-                        <td><code>4 &lt;= 3</code></td>
-                        <td>❌ false</td>
-                    </tr>
-                </table>
-
-                <h3>2. Рівність та Нерівність (Важливо!)</h3>
-                <table>
-                    <tr>
-                        <th>Оператор</th>
-                        <th>Назва</th>
-                        <th>Приклад (5 проти "5")</th>
-                    </tr>
-                    <!-- Рівність -->
-                    <tr style="background-color: #fff3e0;">
-                        <td><code>==</code></td>
-                        <td>Слабка рівність (Ігнорує тип)</td>
-                        <td>✅ <code>true</code> (Схожі)</td>
-                    </tr>
-                    <tr style="background-color: #e8f5e9;">
-                        <td><code>===</code></td>
-                        <td><strong>Строга рівність</strong> (Перевіряє тип)</td>
-                        <td>❌ <code>false</code> (Різні)</td>
-                    </tr>
-                    <!-- Нерівність -->
-                    <tr style="background-color: #fff3e0;">
-                        <td><code>!=</code></td>
-                        <td>Слабка нерівність</td>
-                        <td>❌ <code>false</code></td>
-                    </tr>
-                    <tr style="background-color: #e8f5e9;">
-                        <td><code>!==</code></td>
-                        <td><strong>Строга нерівність</strong></td>
-                        <td>✅ <code>true</code></td>
-                    </tr>
-                </table>
-            </section>
-
-            <!-- 6. Логічні Оператори (NEW) -->
-            <section id="logical-ops">
-                <h2>6. Логічні Оператори (&&, ||, !)</h2>
-                <p>Логічні оператори дозволяють перевіряти кілька умов одночасно. При цьому відбувається "приведення типів" — перетворення значень на <code>true</code> або <code>false</code>.</p>
-
-                <div class="warning">
-                    <strong>⚠️ Truthy і Falsy (Важливо запам'ятати)</strong><br>
-                    Є лише 6 значень, які JS вважає "Брехнею" (Falsy). Все інше — це "Правда" (Truthy).<br><br>
-                    ❌ <strong>Falsy (Брехня):</strong> <code>0</code>, <code>NaN</code>, <code>null</code>, <code>undefined</code>, <code>""</code> (порожній рядок), <code>false</code>.<br>
-                    ✅ <strong>Truthy (Правда):</strong> Все інше (наприклад <code>" "</code>, <code>1</code>, <code>-10</code>, <code>"hello"</code>).
-                </div>
-
-                <h3>1. Логічне «І» (&&) — Амперсанд</h3>
-                <p>Шукає першу брехню. Якщо всі правдиві — повертає останнє.</p>
-                
-                <!-- UPDATED ANALOGY -->
-                <div class="analogy" style="border-left-color: #ff9800;">
-                    <h4 style="color: #ff9800;">🔐 Вхід в акаунт (Instagram/Game)</h4>
-                    <p>"Щоб увійти в профіль, ти маєш ввести правильний логін <strong>І</strong> правильний пароль". <br>Якщо хоча б одне поле неправильне (false) — вхід заборонено.</p>
-                </div>
-                
-                <div class="code-block">
-<span class="code-keyword">const</span> age = <span class="code-number">20</span>;
-console.log(age > <span class="code-number">10</span> && age < <span class="code-number">30</span>); <span class="code-comment">// true && true -> true</span>
-
-<span class="code-comment">// Зупиняється на першому false:</span>
-console.log(<span class="code-number">1</span> && <span class="code-number">0</span> && <span class="code-number">5</span>); <span class="code-comment">// поверне 0 (бо це falsy)</span>
-                </div>
-
-                <h3>2. Логічне «АБО» (||) — Пайп</h3>
-                <p>Шукає першу правду. Якщо все брехня — повертає останнє.</p>
-                <div class="analogy" style="border-left-color: #4CAF50;">
-                    <h4 style="color: #4CAF50;">🎫 Вхідний квиток</h4>
-                    <p>"Ти пройдеш, якщо маєш квиток <strong>АБО</strong> запрошення <strong>АБО</strong> ти організатор". <br>Достатньо хоча б однієї правди (true).</p>
-                </div>
-                <div class="code-block">
-<span class="code-keyword">const</span> age = <span class="code-number">5</span>;
-console.log(age < <span class="code-number">10</span> || age > <span class="code-number">30</span>); <span class="code-comment">// true || false -> true</span>
-
-<span class="code-comment">// Зупиняється на першому true:</span>
-console.log(<span class="code-number">0</span> || <span class="code-string">"Привіт"</span> || <span class="code-keyword">false</span>); <span class="code-comment">// поверне "Привіт"</span>
-                </div>
-
-                <h3>3. Логічне «НЕ» (!)</h3>
-                <p>Робить інверсію: перетворює правду на брехню і навпаки.</p>
-                <div class="code-block">
-<span class="code-keyword">const</span> isOnline = <span class="code-keyword">true</span>;
-console.log(!isOnline); <span class="code-comment">// false (Не онлайн)</span>
-console.log(!!<span class="code-string">"text"</span>); <span class="code-comment">// true (швидкий спосіб перевірити на truthy)</span>
-                </div>
-            </section>
-
-            <!-- 7. Умови -->
-            <section id="conditions">
-                <h2>7. Умовні розгалуження (if / else)</h2>
-                <p>Це здатність програми приймати рішення. Без цього код виконувався б просто зверху вниз, як пісня на пластинці.</p>
-
-                <div class="analogy" style="border-left-color: #ff5722;">
-                    <h4 style="color: #ff5722;">🚦 Аналогія: Світлофор</h4>
-                    <p>
-                        <strong>ЯКЩО (if)</strong> горить зелений -> йди.<br>
-                        <strong>ІНАКШЕ (else)</strong> -> стій.
-                    </p>
-                </div>
-
-                <div class="code-block">
-<span class="code-keyword">const</span> color = <span class="code-string">"green"</span>;
-
-<span class="code-keyword">if</span> (color === <span class="code-string">"green"</span>) {
-    alert(<span class="code-string">"Можна йти!"</span>);
-} <span class="code-keyword">else</span> {
-    alert(<span class="code-string">"Стій і чекай!"</span>);
-}
-                </div>
-
-                <h3>Складна умова (else if)</h3>
-                <p>Якщо варіантів більше ніж два (наприклад, Жовтий колір).</p>
-                <div class="code-block">
-<span class="code-keyword">if</span> (color === <span class="code-string">"green"</span>) {
-    console.log(<span class="code-string">"Йди"</span>);
-} <span class="code-keyword">else if</span> (color === <span class="code-string">"yellow"</span>) {
-    console.log(<span class="code-string">"Приготуйся"</span>);
-} <span class="code-keyword">else</span> {
-    console.log(<span class="code-string">"Стій"</span>);
-}
-                </div>
-            </section>
-
-            <!-- 8. Рядки -->
-            <section id="strings">
-                <h2>8. Магія Тексту (Шаблонні рядки)</h2>
-                <p>Найзручніший спосіб з'єднувати текст і змінні — використовувати зворотні лапки <code>` `</code>.</p>
-
-                <div class="code-block">
-<span class="code-keyword">let</span> name = <span class="code-string">"Макс"</span>;
-<span class="code-keyword">let</span> age = <span class="code-number">16</span>;
-
-<span class="code-comment">// ✅ Сучасний спосіб (Інтерполяція)</span>
-<span class="code-keyword">let</span> text = <span class="code-string">`Привіт, ${name}. Тобі ${age} років.`</span>;
-                </div>
-            </section>
-
-            <!-- 9. Взаємодія -->
-            <section id="interaction">
-                <h2>9. Взаємодія: Як спілкуватися з JS?</h2>
-                <p>Браузер надає нам 4 основні інструменти для введення та виведення інформації.</p>
-
-                <!-- Console.log -->
-                <div class="analogy" style="border-left-color: #607d8b;">
-                    <h4 style="color: #607d8b;">🛠 1. console.log() — "Щоденник Розробника"</h4>
-                    <p>Бачить тільки програміст у консолі (F12).</p>
-                </div>
-                <div class="code-block">
-console.log(<span class="code-string">"Secret info"</span>);
-                </div>
-
-                <!-- Alert -->
-                <div class="analogy" style="border-left-color: #ff9800;">
-                    <h4 style="color: #ff9800;">📢 2. alert() — "Гучномовець"</h4>
-                    <p>Виводить модальне вікно. Зупиняє скрипт.</p>
-                </div>
-
-                <!-- Prompt -->
-                <div class="analogy" style="border-left-color: #2196f3;">
-                    <h4 style="color: #2196f3;">📝 3. prompt() — "Анкета"</h4>
-                    <p>Поле для введення тексту. Завжди повертає рядок!</p>
-                </div>
-
-                <!-- Confirm -->
-                <div class="analogy" style="border-left-color: #9c27b0;">
-                    <h4 style="color: #9c27b0;">⚖ 4. confirm() — "Так чи Ні"</h4>
-                    <p>Повертає <code>true</code> (ОК) або <code>false</code> (Скасувати).</p>
-                </div>
-
-                <button id="demoBtn" class="btn">Запустити Демо-Діалог</button>
-            </section>
-
-            <!-- 10. ЗАДАЧІ -->
-            <section id="tasks">
-                <h2>10. Задачі для самостійного вирішення</h2>
-                
-                <!-- Задача 1 -->
-                <div class="task-card">
-                    <div class="task-header">
-                        <h3>Задача №1: "Калькулятор Зарплати"</h3>
-                        <span class="task-badge">Легко</span>
-                    </div>
-                    <p><strong>Умова:</strong> Створіть змінні <code>salary</code> = 15000 та <code>months</code> = 12. Обчисліть річний дохід і виведіть його через alert.</p>
-                    
-                    <div style="margin-top: 15px;">
-                        <button class="btn btn-small btn-outline" onclick="runTask1()">▶ Запустити</button>
-                        <button class="solution-toggle" onclick="toggleSolution('sol1')">Показати рішення</button>
-                    </div>
-
-                    <div id="sol1" class="solution-block">
-                        <div class="code-block">
-<span class="code-keyword">const</span> salary = <span class="code-number">15000</span>;
-<span class="code-keyword">const</span> months = <span class="code-number">12</span>;
-alert(<span class="code-string">`Річний дохід: ${salary * months}`</span>);
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Задача 2 -->
-                <div class="task-card">
-                    <div class="task-header">
-                        <h3>Задача №2: "Конвертер Часу"</h3>
-                        <span class="task-badge">Середньо</span>
-                    </div>
-                    <p><strong>Умова:</strong> Переведіть 24 години у хвилини та секунди.</p>
-                    
-                    <div style="margin-top: 15px;">
-                        <button class="btn btn-small btn-outline" onclick="runTask2()">▶ Запустити</button>
-                        <button class="solution-toggle" onclick="toggleSolution('sol2')">Показати рішення</button>
-                    </div>
-
-                    <div id="sol2" class="solution-block">
-                        <div class="code-block">
-<span class="code-keyword">const</span> hours = <span class="code-number">24</span>;
-console.log(<span class="code-string">`Хвилин: ${hours * 60}`</span>);
-console.log(<span class="code-string">`Секунд: ${hours * 60 * 60}`</span>);
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Задача 3 -->
-                <div class="task-card">
-                    <div class="task-header">
-                        <h3>Задача №3: "Фейс-контроль" (if/else)</h3>
-                        <span class="task-badge">Складно</span>
-                    </div>
-                    <p><strong>Умова:</strong> Запитайте вік через <code>prompt</code>. Якщо >= 18 — "Welcome", інакше — "Go home".</p>
-                    
-                    <div style="margin-top: 15px;">
-                        <button class="btn btn-small btn-outline" onclick="runTask3()">▶ Запустити</button>
-                        <button class="solution-toggle" onclick="toggleSolution('sol3')">Показати рішення</button>
-                    </div>
-
-                    <div id="sol3" class="solution-block">
-                        <div class="code-block">
-<span class="code-keyword">const</span> age = prompt(<span class="code-string">"Ваш вік?"</span>);
-<span class="code-keyword">if</span> (Number(age) >= <span class="code-number">18</span>) {
-    alert(<span class="code-string">"Welcome!"</span>);
-} <span class="code-keyword">else</span> {
-    alert(<span class="code-string">"Go home!"</span>);
-}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 11. ТЕСТ -->
-            <section id="quiz">
-                <h2>🎯 Розширений Тест (7 питань)</h2>
-                <p>Перевірте, як ви засвоїли матеріал.</p>
-                
-                <div class="quiz-container">
-                    <form id="quizForm">
-                        <!-- Питання 1 -->
-                        <div class="question-block" id="q1-block">
-                            <span class="question-text">1. Що робить `const`?</span>
-                            <div class="options">
-                                <label><input type="radio" name="q1" value="a"> Створює змінну, яку можна змінювати.</label>
-                                <label><input type="radio" name="q1" value="b"> Створює незмінну константу.</label>
-                            </div>
-                        </div>
-                        <!-- Питання 2 -->
-                        <div class="question-block" id="q2-block">
-                            <span class="question-text">2. `10` + `"5"` = ?</span>
-                            <div class="options">
-                                <label><input type="radio" name="q2" value="a"> 15</label>
-                                <label><input type="radio" name="q2" value="b"> "105"</label>
-                            </div>
-                        </div>
-                        <!-- Питання 3 -->
-                        <div class="question-block" id="q3-block">
-                            <span class="question-text">3. Який оператор найбезпечніший для порівняння?</span>
-                            <div class="options">
-                                <label><input type="radio" name="q3" value="a"> ==</label>
-                                <label><input type="radio" name="q3" value="b"> ===</label>
-                            </div>
-                        </div>
-                         <!-- Питання 4 -->
-                         <div class="question-block" id="q4-block">
-                            <span class="question-text">4. Яка назва змінної правильна (best practice)?</span>
-                            <div class="options">
-                                <label><input type="radio" name="q4" value="a"> userName</label>
-                                <label><input type="radio" name="q4" value="b"> user_name</label>
-                                <label><input type="radio" name="q4" value="c"> Username</label>
-                            </div>
-                        </div>
-                        <!-- Питання 5 -->
-                        <div class="question-block" id="q5-block">
-                            <span class="question-text">5. Який тип даних завжди повертає `prompt()`?</span>
-                            <div class="options">
-                                <label><input type="radio" name="q5" value="a"> Number (Число)</label>
-                                <label><input type="radio" name="q5" value="b"> String (Рядок)</label>
-                            </div>
-                        </div>
-                        <!-- Питання 6 -->
-                        <div class="question-block" id="q6-block">
-                            <span class="question-text">6. Що буде, якщо умова в `if` є `false`?</span>
-                            <div class="options">
-                                <label><input type="radio" name="q6" value="a"> Виконається блок `else`</label>
-                                <label><input type="radio" name="q6" value="b"> Програма зламається</label>
-                            </div>
-                        </div>
-                         <!-- Питання 7 -->
-                         <div class="question-block" id="q7-block">
-                            <span class="question-text">7. Чому дорівнює `15 % 2`?</span>
-                            <div class="options">
-                                <label><input type="radio" name="q7" value="a"> 7.5</label>
-                                <label><input type="radio" name="q7" value="b"> 1 (остача від ділення)</label>
-                            </div>
-                        </div>
-
-                        <button type="button" class="btn btn-check" onclick="checkQuiz()">Перевірити</button>
-                    </form>
-                    <div id="quiz-result"></div>
-                </div>
-            </section>
-
-        </main>
+              <button type="button" class="btn btn-check" onclick="checkQuiz()">
+                Перевірити
+              </button>
+            </form>
+            <div id="quiz-result"></div>
+          </div>
+        </section>
+      </main>
     </div>
 
     <footer>
-        <p>Курс адаптовано для легкого навчання &copy; 2023</p>
+      <p>Курс адаптовано для легкого навчання &copy; 2025</p>
     </footer>
 
+    <script>
+      // --- Логіка DOM Демо (NEW) ---
+      function changeTitleDemo() {
+        const h1 = document.querySelector("h1");
+        const originalText = "JS.Education";
+        if (h1.textContent === originalText) {
+          h1.textContent = "Заголовок Змінено через JS! 🎉";
+          h1.style.color = "red";
+        } else {
+          h1.textContent = originalText;
+          h1.style.color = "#323330";
+        }
+      }
 
-    <script src="./index.js"></script>
+      function toggleSkin() {
+        const box = document.getElementById("skinBox");
+        box.classList.toggle("active-skin");
+
+        if (box.classList.contains("active-skin")) {
+          box.textContent = "😎 Тепер я крутий (Active Skin)";
+        } else {
+          box.textContent = "😐 Я звичайна коробка";
+        }
+      }
+
+      // --- Логіка Демо Діалог ---
+      document.getElementById("demoBtn").addEventListener("click", function () {
+        const name = prompt("Привіт! Як тебе звати?", "Друже");
+        if (name) {
+          const isReady = confirm(`${name}, ти готовий вчити JS?`);
+          if (isReady) alert("Супер! Тоді поїхали! 🚀");
+          else alert("Нічого, відпочинь 😉");
+        }
+      });
+
+      // --- Меню ---
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".sidebar a");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          if (scrollY >= section.offsetTop - 200)
+            current = section.getAttribute("id");
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").includes(current))
+            link.classList.add("active");
+        });
+      });
+
+      // 3. Тест (UPDATED)
+      function checkQuiz() {
+        const answers = {
+          q1: "b",
+          q2: "b",
+          q3: "b",
+          q4: "a", // userName
+          q5: "b", // String
+          q6: "a", // else
+          q7: "b", // 1
+        };
+        let score = 0;
+        const total = Object.keys(answers).length;
+        const resultDiv = document.getElementById("quiz-result");
+        const form = document.getElementById("quizForm");
+
+        document.querySelectorAll(".question-block").forEach((b) => {
+          b.style.borderLeft = "none";
+          b.style.backgroundColor = "#fff";
+        });
+
+        for (let q in answers) {
+          const selected = form.elements[q].value;
+          const block = document.getElementById(q + "-block");
+          if (selected === answers[q]) {
+            score++;
+            block.style.borderLeft = "5px solid var(--success-color)";
+          } else {
+            block.style.borderLeft = "5px solid var(--error-color)";
+          }
+        }
+        resultDiv.style.display = "block";
+        if (score === total) {
+          resultDiv.style.color = "var(--success-color)";
+          resultDiv.innerHTML = `🎉 Ідеально! ${score} з ${total}`;
+        } else {
+          resultDiv.innerHTML = `Результат: ${score} з ${total}`;
+        }
+      }
+
+      // --- Задачі ---
+      function toggleSolution(id) {
+        document.getElementById(id).classList.toggle("visible");
+      }
+
+      // Старі задачі
+      function runTask1() {
+        alert(`15000 * 12 = ${15000 * 12}`);
+      }
+      function runTask2() {
+        alert(`24 години = ${24 * 60} хв = ${24 * 3600} сек`);
+      }
+      function runTask3() {
+        const a = prompt("Вік?");
+        if (a) alert(Number(a) >= 18 ? "Welcome" : "Go home");
+      }
+
+      // Нові задачі (DOM)
+      function runTask4() {
+        const heading = document.querySelector("h1");
+        // Перевірка, щоб можна було повернути назад (опціонально)
+        if (heading.textContent !== "HACKED BY JS!") {
+          heading.textContent = "HACKED BY JS!";
+          heading.style.color = "green";
+        } else {
+          heading.textContent = "JS.Education";
+          heading.style.color = "#323330";
+        }
+      }
+
+      function runTask5() {
+        const box = document.querySelector("#test-box");
+        box.classList.toggle("night-mode");
+      }
+
+      function runTask6() {
+        const name = prompt("Як вас звати?");
+        const span = document.querySelector("#user-name-span");
+        if (name) {
+          span.textContent = name;
+        }
+      }
+    </script>
   </body>
 </html>
